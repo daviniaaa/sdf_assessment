@@ -1,6 +1,7 @@
 package task01;
 
 import java.io.Console;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +34,8 @@ public class Main {
             opt = scan.next();
             b = scan.next();
 
+            scan.close(); // google says to "get rid of it as soon as you exhaust its input"
+
             if (a.equals("$last")) {
                 first = last;
             } else {
@@ -48,29 +51,44 @@ public class Main {
             switch (opt) {
                 case "+":
                     last = first + second;
+                    if (last % 1 == 0){
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        System.out.println(df.format(last));
+                        break;
+                    }
                     System.out.println(last);
                     break;
                 case "-":
                     last = first - second;
+                    if (last % 1 == 0){
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        System.out.println(df.format(last));
+                        break;
+                    }
                     System.out.println(last);
                     break;
                 case "/":
                     last = first / second;
+                    if (last % 1 == 0){
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        System.out.println(df.format(last));
+                        break;
+                    }
                     System.out.println(last);
                     break;
                 case "*":
                     last = first * second;
+                    if (last % 1 == 0){
+                        DecimalFormat df = new DecimalFormat("###.#");
+                        System.out.println(df.format(last));
+                        break;
+                    }
                     System.out.println(last);
                     break;
                 default:
                     System.out.println("Invalid operator");
             }
-            
-            
-
         }
-
         System.out.println("Bye bye");
-        
     }
 }
