@@ -123,6 +123,11 @@ public class Main {
                     map.put(temp[j], innerMap);
                 }
             }
+
+            // adding the last word because paper says "print all the words"
+            if (!map.containsKey(temp[temp.length - 1])) {
+                map.put(temp[temp.length - 1], new HashMap<String, Integer>());
+            }
         }
 
         for (String s : map.keySet()) {
